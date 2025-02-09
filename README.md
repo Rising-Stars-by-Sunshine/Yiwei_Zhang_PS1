@@ -15,47 +15,124 @@ Dataset 350: 350/diverse_safety_adversarial_dialog_350.csv, contains 350 convers
 
 <img width="734" alt="截屏2025-01-19 00 28 23" src="https://github.com/user-attachments/assets/5d9921ee-e14c-4e4a-8774-2a91bac2043b" />
 
-# System Configuration Instructions
+# 🖥️ System Configuration Instructions
 
-The analysis was performed on the following system setup:
+This repository contains the system configuration details, including **CPU, Memory, Disk Space, Python environment, and installed packages**. These specifications ensure compatibility and reproducibility for research and development.
 
-- **CPU**: Intel Xeon CPU @ 2.20GHz (2 cores, 2 threads per core)
-- **Memory**: 12 GB (6.7 GB available during execution)
-- **Python Version**: 3.11.11
-- **Installed Packages**:
-  - `numpy==1.26.4`: Numerical computations
-  - `pandas==2.2.2`: Data manipulation and analysis
-  - `matplotlib==3.10.0`: Data visualization
-  - `seaborn==0.13.2`: Statistical data visualization
-  - `scipy==1.13.1`: Scientific computations
+## ⚙️ **System Specifications**
+### **CPU Information**
+- **Architecture:** x86_64
+- **CPU Model:** Intel(R) Xeon(R) CPU @ 2.20GHz
+- **Cores:** 1 socket, 2 CPUs, 2 threads per core
+- **Virtualization:** Full (KVM)
+- **Cache:**
+  - **L1:** 32 KiB
+  - **L2:** 256 KiB
+  - **L3:** 55 MiB
+
+### **Memory Information**
+- **Total RAM:** 12 GiB
+- **Available:** 11 GiB
+- **Swap Memory:** Not enabled
+
+### **Disk Space**
+| Filesystem | Size | Used | Available | Usage % |
+|------------|------|------|-----------|---------|
+| Overlay    | 108G | 32G  | 77G       | 29%     |
+| /dev/sda1  | 76G  | 56G  | 21G       | 74%     |
+
+### **GPU Information**
+- 🚫 **No GPU detected** (Runs on CPU)
 
 ---
 
-## Local Environment Setup
+## 🐍 **Python Environment**
+- **Python Version:** `3.11.11`
+- **Package Manager:** `pip`
+- **Installed Packages:** (`pip list`)
+  
+### **📦 Key Installed Packages**
+| Package | Version |
+|---------|---------|
+| `numpy` | 1.26.4 |
+| `pandas` | 2.2.2 |
+| `scikit-learn` | 1.6.0 |
+| `tensorflow` | 2.17.1 |
+| `torch` | 2.5.1+cu121 |
+| `transformers` | 4.47.1 |
+| `matplotlib` | 3.10.0 |
+| `seaborn` | 0.13.2 |
 
-To run the EDA on your local machine, follow these steps:
+For a full package list, see [`requirements.txt`](./requirements.txt).
 
-### 1. Prerequisites
-Ensure you have the following installed:
-- Python (3.9 or later)
-- `pip` package manager
+---
 
-### 2. Create a Virtual Environment
-Setting up a virtual environment is recommended to isolate dependencies:
+## 🚀 **How to Use**
+### **📌 Setup Environment**
+To replicate this system environment, follow these steps:
 
-# Create the virtual environment
-python -m venv eda_env
+1️⃣ **Clone Repository**  
+```bash
+git clone https://github.com/Rising-Stars-by-Sunshine/Yiwei_Zhang_PS1.git
+cd Yiwei_Zhang_PS1
+```
+2️⃣ **📌 Create a Virtual Environment**
+A **virtual environment** helps manage dependencies **without affecting global Python installations**.
+
+#### **For Linux & macOS:**
+```bash
+# Check if Python is installed
+python3 --version  
+
+# Install Python if not available
+sudo apt install python3 python3-venv python3-pip  # Ubuntu/Debian
+brew install python                                # macOS
+
+# Create a virtual environment
+python3 -m venv venv  
 
 # Activate the virtual environment
-source eda_env/bin/activate   # On Windows: eda_env\\Scripts\\activate
+source venv/bin/activate  
 
-### 3. Install Required Dependencies
+# Deactivate when done
+deactivate
+```
+#### **For Windows:**
+```bash
+# Check if Python is installed
+python --version  
 
-pip install numpy pandas matplotlib seaborn scipy
+# Create a virtual environment
+python -m venv venv  
 
-### 4. Download the Dataset
-Place the dataset file (diverse_safety_adversarial_dialog_350.csv) in the same directory as the analysis script.
+# Activate the virtual environment (PowerShell)
+venv\Scripts\Activate.ps1  
 
-### 5.  Run the Analysis Script
+# Activate in Command Prompt (cmd.exe)
+venv\Scripts\activate  
+
+# Deactivate when done
+deactivate
+```
+3️⃣ **Install Dependencies**
+Once the virtual environment is activated, install all required Python packages:
+
+```bash
+pip install numpy pandas scikit-learn tensorflow torch transformers matplotlib seaborn \
+    requests beautifulsoup4 Flask opencv-python scipy nltk tqdm Pillow \
+    PyYAML jsonschema protobuf grpcio google-auth google-auth-oauthlib google-cloud-storage \
+    google-cloud-bigquery google-cloud-firestore google-cloud-functions google-cloud-translate \
+    google-api-python-client google-auth-httplib2 jupyter jupyterlab notebook ipython \
+    ipykernel ipywidgets fastai datasets sentencepiece evaluate tensorboard xgboost \
+    plotly openai langchain huggingface-hub fastapi uvicorn typer pydantic rich \
+    networkx spacy gensim sympy pytest pylint mypy black isort flake8 autopep8
+```
+4️⃣ **Verify Installation**
+```bash
+pip list  
+python --version
+```
+5️⃣ **Running the Project**
 ```bash
 python EDA-2.ipynb
+```
