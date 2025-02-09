@@ -63,7 +63,6 @@ This repository contains the system configuration details, including **CPU, Memo
 | `matplotlib` | 3.10.0 |
 | `seaborn` | 0.13.2 |
 
-For a full package list, see [`requirements.txt`](./requirements.txt).
 
 ---
 
