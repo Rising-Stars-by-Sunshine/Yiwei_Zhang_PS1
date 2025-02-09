@@ -1,4 +1,3 @@
-# Yiwei_Zhang_PS1
 # Data Descriptor
 # DICES Dataset: Diversity in Conversational AI Evaluation for Safety
 # Background
